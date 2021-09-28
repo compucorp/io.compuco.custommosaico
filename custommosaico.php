@@ -2,6 +2,8 @@
 
 require_once 'custommosaico.civix.php';
 
+use CRM_Custommosaico_ExtensionUtil as E;
+
 /**
  * Implements hook_civicrm_config().
  *
@@ -138,4 +140,17 @@ function custommosaico_civicrm_entityTypes(&$entityTypes) {
  */
 function custommosaico_civicrm_themes(&$themes) {
   _custommosaico_civix_civicrm_themes($themes);
+}
+
+/**
+ * Implements hook_civicrm_mosaicoBaseTemplates().
+ */
+function custommosaico_civicrm_mosaicoBaseTemplates(&$templates) {
+  // Add custom mail template for mosaico.
+  $templates['custommosaico'] = [
+    'name' => 'versafix-compucorp',
+    'title' => 'Versafix Compucorp',
+    'path' => E::url('packages/compucorp/templates/versafix-compucorp/template-versafix-compucorp.html'),
+    'thumbnail' => E::url('packages/compucorp/templates/versafix-compucorp/edres/_full.png'),
+  ];
 }
