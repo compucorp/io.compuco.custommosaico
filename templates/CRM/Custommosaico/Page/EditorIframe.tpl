@@ -11,9 +11,6 @@
   </script>
   {/foreach}
 
-  <script type="module" src="{$pluginUrl|htmlspecialchars}">
-  </script>
-
   {foreach from=$styleUrls item=styleUrl}
   <link href="{$styleUrl|htmlspecialchars}" rel="stylesheet" type="text/css"/>
   {/foreach}
@@ -27,6 +24,8 @@
       }
 
       var config = {/literal}{$mosaicoConfig}{literal};
+
+      var plugins = {/literal}{$mosaicoPlugins}{literal};
       
       window.addEventListener('beforeunload', function(e) {
         if(window.parent.document.getElementById('crm-mosaico').style.display !== "none") {

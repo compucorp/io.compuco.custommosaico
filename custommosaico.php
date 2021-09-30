@@ -3,6 +3,7 @@
 require_once 'custommosaico.civix.php';
 
 use CRM_Custommosaico_ExtensionUtil as E;
+use CRM_Custommosaico_Plugin_FontLoaderPlugin as FontLoaderPlugin;
 
 /**
  * Implements hook_civicrm_config().
@@ -153,4 +154,29 @@ function custommosaico_civicrm_mosaicoBaseTemplates(&$templates) {
     'path' => E::url('packages/compucorp/templates/versafix-compucorp/template-versafix-compucorp.html'),
     'thumbnail' => E::url('packages/compucorp/templates/versafix-compucorp/edres/_full.png'),
   ];
+}
+
+/**
+ * Implements hook_civicrm_mosaicoPlugin().
+ */
+function custommosaico_civicrm_mosaicoPlugin(&$plugins) {
+  $plugins[] = FontLoaderPlugin::getPluginJS();
+}
+
+/**
+ * Implements hook_civicrm_alterMailContent().
+ */
+function custommosaico_civicrm_alterMailContent(&$content) {
+  // Replace [fontLoader.style] token with @font-face declaration.
+  if ($content['template_type'] === 'mosaico') {
+    $css = FontLoaderPlugin::getPluginCSS();
+
+    if (!empty($content['text'])) {
+      $content['text'] = str_replace('[fontLoader.style]', $css, $content['text']);
+    }
+
+    if (!empty($content['html'])) {
+      $content['html'] = str_replace('[fontLoader.style]', $css, $content['html']);
+    }
+  }
 }
