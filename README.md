@@ -1,1 +1,1 @@
-# uk.co.compucorp.custommosaico
+# io.compuco.custommosaico

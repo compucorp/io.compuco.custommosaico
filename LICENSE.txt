@@ -1,4 +1,4 @@
-Package: uk.co.compucorp.custommosaico
+Package: io.compuco.custommosaico
 Copyright (C) 2021, Compucorp <info@compucorp.co.uk>
 Licensed under the GNU Affero Public License 3.0 (below).
 

@@ -149,10 +149,10 @@ function custommosaico_civicrm_themes(&$themes) {
 function custommosaico_civicrm_mosaicoBaseTemplates(&$templates) {
   // Add custom mail template for mosaico.
   $templates['custommosaico'] = [
-    'name' => 'versafix-compucorp',
-    'title' => 'Versafix Compucorp',
-    'path' => E::url('packages/compucorp/templates/versafix-compucorp/template-versafix-compucorp.html'),
-    'thumbnail' => E::url('packages/compucorp/templates/versafix-compucorp/edres/_full.png'),
+    'name' => 'versafix-compuco',
+    'title' => 'Versafix Compuco',
+    'path' => E::url('packages/compuco/templates/versafix-compuco/template-versafix-compuco.html'),
+    'thumbnail' => E::url('packages/compuco/templates/versafix-compuco/edres/_full.png'),
   ];
 }
 

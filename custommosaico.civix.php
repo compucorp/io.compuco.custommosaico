@@ -8,7 +8,7 @@
  */
 class CRM_Custommosaico_ExtensionUtil {
   const SHORT_NAME = 'custommosaico';
-  const LONG_NAME = 'uk.co.compucorp.custommosaico';
+  const LONG_NAME = 'io.compuco.custommosaico';
   const CLASS_PREFIX = 'CRM_Custommosaico';
 
   /**

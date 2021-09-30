@@ -48,7 +48,7 @@ class CRM_Custommosaico_Upgrader_Base {
   public static function instance() {
     if (!self::$instance) {
       self::$instance = new CRM_Custommosaico_Upgrader(
-        'uk.co.compucorp.custommosaico',
+        'io.compuco.custommosaico',
         E::path()
       );
     }
