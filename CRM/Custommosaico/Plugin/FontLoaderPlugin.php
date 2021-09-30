@@ -2,13 +2,13 @@
 
 class CRM_Custommosaico_Plugin_FontLoaderPlugin {
 
-    public static function getPluginJS() {
-        $fonts = CRM_Core_OptionGroup::values('custommosaico_brand_fonts');
-        $brandedFonts = '';
-        foreach ($fonts as $key => $value) {
-            $brandedFonts .= '<option value="\\\''.$value.'\\\',sans-serif">'.$value.'</option>';
-        }
-        $widget = 
+  public static function getPluginJS() {
+    $fonts = CRM_Core_OptionGroup::values('custommosaico_brand_fonts');
+    $brandedFonts = '';
+    foreach ($fonts as $key => $value) {
+      $brandedFonts .= '<option value="\\\'' . $value . '\\\',sans-serif">' . $value . '</option>';
+    }
+    $widget =
         <<< JS
         {
             widget: function ($, ko, kojqui) {
@@ -45,26 +45,27 @@ class CRM_Custommosaico_Plugin_FontLoaderPlugin {
         }
         JS;
 
-        return $widget;
-    }
+    return $widget;
+  }
 
-    public static function getPluginCSS() {
-        $fonts = CRM_Core_OptionGroup::values('custommosaico_brand_fonts');
-        $importParam = [];
-        $fontFamilies = [];
-        foreach ($fonts as $key => $value) {
-          $importParam[] = "family=$value";
-          $fontFamilies[] = "font-family: '$value', sans-serif;";
-        }
-        $fontFamilies = implode("\n", $fontFamilies);
-        $importParam = implode("&", $importParam);
-        $imports = "@import url('https://fonts.googleapis.com/css2?$importParam&display=swap');";
-        $css = 
+  public static function getPluginCSS() {
+    $fonts = CRM_Core_OptionGroup::values('custommosaico_brand_fonts');
+    $importParam = [];
+    $fontFamilies = [];
+    foreach ($fonts as $key => $value) {
+      $importParam[] = "family=$value";
+      $fontFamilies[] = "font-family: '$value', sans-serif;";
+    }
+    $fontFamilies = implode("\n", $fontFamilies);
+    $importParam = implode("&", $importParam);
+    $imports = "@import url('https://fonts.googleapis.com/css2?$importParam&display=swap');";
+    $css =
         <<< CSS
             $imports
             $fontFamilies
         CSS;
 
-        return $css;
-    }
+    return $css;
+  }
+
 }

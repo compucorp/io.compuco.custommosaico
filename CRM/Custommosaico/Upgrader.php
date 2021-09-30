@@ -20,7 +20,8 @@ class CRM_Custommosaico_Upgrader extends CRM_Custommosaico_Upgrader_Base {
         civicrm_api3('OptionValue', 'delete', ['id' => $optionValue['id']]);
       }
       civicrm_api3('OptionGroup', 'delete', ['id' => $optionGroupId]);
-    } catch (\CiviCRM_API3_Exception $ex) {
+    }
+    catch (\CiviCRM_API3_Exception $ex) {
       // Ignore exception.
     }
   }

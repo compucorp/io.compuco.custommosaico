@@ -13,19 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Run npm install
-      shell: bash -l {0}
-      run: |
-        nvm install
-        nvm use
-        npm ci
-
     - name: Fetch target branch
       run: git fetch -n origin ${GITHUB_BASE_REF}
 
     - name: Run phpcs linter
       run: git diff --diff-filter=d  origin/${GITHUB_BASE_REF} --name-only -- '*.php' | xargs -r ./bin/phpcs.phar --standard=phpcs-ruleset.xml
-
-    - name: Run eslint linter
-      if: ${{ always() }}
-      run: git diff --diff-filter=d origin/${GITHUB_BASE_REF} --name-only -- '*.js' | xargs -r  npx eslint --max-warnings=0 -c .eslintrc.json
