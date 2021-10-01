@@ -1,9 +1,11 @@
 <?php
 
-class CRM_Custommosaico_Plugin_FontLoaderPlugin {
+class CRM_Custommosaico_Plugin_FontLoader {
+
+  const OPTION_GROUP = 'custommosaico_brand_fonts';
 
   public static function getPluginJS() {
-    $fonts = CRM_Core_OptionGroup::values('custommosaico_brand_fonts');
+    $fonts = CRM_Core_OptionGroup::values(self::OPTION_GROUP);
     $brandedFonts = '';
     foreach ($fonts as $key => $value) {
       $brandedFonts .= '<option value="\\\'' . $value . '\\\',sans-serif">' . $value . '</option>';
@@ -49,7 +51,7 @@ class CRM_Custommosaico_Plugin_FontLoaderPlugin {
   }
 
   public static function getPluginCSS() {
-    $fonts = CRM_Core_OptionGroup::values('custommosaico_brand_fonts');
+    $fonts = CRM_Core_OptionGroup::values(self::OPTION_GROUP);
     $importParam = [];
     $fontFamilies = [];
     foreach ($fonts as $key => $value) {

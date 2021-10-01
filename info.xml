@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <extension key="io.compuco.custommosaico" type="module">
   <file>custommosaico</file>
-  <name>Custom Mosaico Template</name>
-  <description>Custom mosaico mail templates and plugins</description>
+  <name>Mosiaco customizations</name>
+  <description>Customizing Mosiaco-CiviCRM integration behavior</description>
   <license>AGPL-3.0</license>
   <maintainer>
     <author>Compucorp</author>

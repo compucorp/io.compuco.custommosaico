@@ -3,7 +3,7 @@
 require_once 'custommosaico.civix.php';
 
 use CRM_Custommosaico_ExtensionUtil as E;
-use CRM_Custommosaico_Plugin_FontLoaderPlugin as FontLoaderPlugin;
+use CRM_Custommosaico_Plugin_FontLoader as FontLoaderPlugin;
 
 /**
  * Implements hook_civicrm_config().
