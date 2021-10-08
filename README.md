@@ -1,6 +1,6 @@
-# Mosiaco customizations
+# io.compuco.custommosaico customizations
 
-The purpose of this extension is to allow us to customize certain behaviors in Mosiaco, currently it allow organizations to:
+The purpose of this extension is to allow us to customize certain behaviors in Mosaico, currently it allow organizations to:
 
 - Manage their email campaigns/newsletter with their existing brand identity, Organizations can choose fonts from their existing brand guidelines in email communication with their customers.
 
@@ -9,4 +9,4 @@ The purpose of this extension is to allow us to customize certain behaviors in M
 
 
 # Technical Requirements
-* [Mosaico](https://github.com/veda-consulting-company/uk.co.vedaconsulting.mosaico): version = v2.3.
+* [Mosaico](https://github.com/veda-consulting-company/uk.co.vedaconsulting.mosaico): version = v2.7.
