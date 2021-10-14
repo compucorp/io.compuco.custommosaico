@@ -5,7 +5,7 @@ class CRM_Custommosaico_Plugin_FontLoader {
   const OPTION_GROUP = 'custommosaico_brand_fonts';
 
   public static function getPluginJS() {
-    $fonts = CRM_Core_OptionGroup::values(self::OPTION_GROUP);
+    $fonts = Civi::settings()->get('custommosaico_brand_selected_fonts') ?? [];
     $brandedFonts = '';
     foreach ($fonts as $key => $value) {
       $brandedFonts .= '<option value="\\\'' . $value . '\\\',sans-serif">' . $value . '</option>';
