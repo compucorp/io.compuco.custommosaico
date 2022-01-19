@@ -161,6 +161,15 @@ function custommosaico_civicrm_mosaicoBaseTemplates(&$templates) {
  */
 function custommosaico_civicrm_mosaicoPlugin(&$plugins) {
   $plugins[] = FontLoaderPlugin::getPluginJS();
+  $plugins[] = CRM_Custommosaico_Plugin_ColorLoader::getPluginJS();
+}
+
+function custommosaico_civicrm_mosaicoScriptUrlsAlter(&$scriptUrls) {
+  $scriptUrls[] = CRM_Core_Resources::singleton()->getUrl('io.compuco.custommosaico', 'js/colorpicker.js', '', TRUE);
+}
+
+function custommosaico_civicrm_mosaicoStyleUrlsAlter(&$styleUrls) {
+  $styleUrls[] = CRM_Core_Resources::singleton()->getUrl('io.compuco.custommosaico', 'css/evol-colorpicker.css', TRUE);
 }
 
 /**
