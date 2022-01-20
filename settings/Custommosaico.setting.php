@@ -38,4 +38,14 @@ return [
     'settings_pages' => ['mosaico' => ['weight' => 151]],
     'pseudoconstant' => ['optionGroupName' => 'custommosaico_brand_colors'],
   ],
+  'custommosaico_brand_use_selected_colors' => [
+    'name' => 'custommosaico_brand_use_selected_colors',
+    'type' => 'Boolean',
+    'default' => FALSE,
+    'html_type' => 'checkbox',
+    'is_domain' => 1,
+    'title' => E::ts('Use the selected brand colours in Mosaico editor.'),
+    'description' => ts('If enabled, Mosaico editor will display the selected brand colours in the colour picker.'),
+    'settings_pages' => ['mosaico' => ['weight' => 152]],
+  ],
 ];

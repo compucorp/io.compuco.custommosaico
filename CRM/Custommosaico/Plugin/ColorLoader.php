@@ -6,8 +6,9 @@ class CRM_Custommosaico_Plugin_ColorLoader {
 
   public static function getPluginJS() {
     $colors = Civi::settings()->get('custommosaico_brand_selected_colors') ?? [];
+    $enabled = (bool) Civi::settings()->get('custommosaico_brand_use_selected_colors') ?? FALSE;
 
-    if (count($colors) < 1) {
+    if (count($colors) < 1 || !$enabled) {
       return "";
     }
 
