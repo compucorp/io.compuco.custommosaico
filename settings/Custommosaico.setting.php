@@ -6,7 +6,7 @@ return [
     'name' => 'custommosaico_brand_selected_fonts',
     'type' => 'Array',
     'is_domain' => 1,
-    'description' => E::ts('Links to custom fonts to be used in mosaico editor'),
+    'description' => E::ts('Names of custom fonts to be used in mosaico editor'),
     'default' => [],
     'title' => E::ts('Brand Fonts'),
     'is_help' => TRUE,

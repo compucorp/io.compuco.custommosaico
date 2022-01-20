@@ -1,10 +1,12 @@
 {htxt id="custommosaico_brand_colors_select"}
   {ts}
-  Specify your organisation's brand colours to make selecting these brand colours easier for users. They will appear as options in the colour picker on the Mosaico compose mailing screen. You should add each brand colour separately as options in the following Hex format i.e. #000000 or #ffffff with no trailing characters or spaces but including the #.“
+  Specify your organisation's brand colours to make selecting these brand colours easier for users. They will appear as options in the colour picker on the Mosaico compose mailing screen.
+  <p> You should add each brand colour separately as options in the following Hex format i.e. #000000 or #ffffff with no trailing characters or spaces but including the #.</p>
   {/ts}
 {/htxt}
 {htxt id="custommosaico_brand_fonts_select"}
   {ts}
-  Specify your organisation's brand fonts. They will appear as options in the font selection box on the Mosaico compose mailing screen. You should add each brand font separately as options, only the name of the font is required in the Label and Value field i.e. Lato or Montserrat, and it is case-sensitive.
+  Specify your organisation's brand fonts. They will appear as options in the font selection box on the Mosaico compose mailing screen.
+  <p>You should add each brand font separately as options, only the name of the font is required in the Label and Value field i.e. Lato or Montserrat, and it is case-sensitive.</p>
   {/ts}
 {/htxt}
