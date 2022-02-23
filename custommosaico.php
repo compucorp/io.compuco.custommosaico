@@ -4,6 +4,7 @@ require_once 'custommosaico.civix.php';
 
 use CRM_Custommosaico_ExtensionUtil as E;
 use CRM_Custommosaico_Plugin_FontLoader as FontLoaderPlugin;
+use CRM_Custommosaico_Plugin_ColorLoader as ColorLoaderPlugin;
 
 /**
  * Implements hook_civicrm_config().
@@ -161,6 +162,21 @@ function custommosaico_civicrm_mosaicoBaseTemplates(&$templates) {
  */
 function custommosaico_civicrm_mosaicoPlugin(&$plugins) {
   $plugins[] = FontLoaderPlugin::getPluginJS();
+  $plugins[] = ColorLoaderPlugin::getPluginJS();
+}
+
+/**
+ * Implements hook_civicrm_mosaicoScritUrlsAlter().
+ */
+function custommosaico_civicrm_mosaicoScriptUrlsAlter(&$scriptUrls) {
+  $scriptUrls[] = CRM_Core_Resources::singleton()->getUrl('io.compuco.custommosaico', 'js/colorpicker.js', '', TRUE);
+}
+
+/**
+ * Implements hook_civicrm_mosaicoStyleUrlsAlter().
+ */
+function custommosaico_civicrm_mosaicoStyleUrlsAlter(&$styleUrls) {
+  $styleUrls[] = CRM_Core_Resources::singleton()->getUrl('io.compuco.custommosaico', 'css/evol-colorpicker.css', TRUE);
 }
 
 /**
