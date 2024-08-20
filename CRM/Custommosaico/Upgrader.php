@@ -7,7 +7,7 @@ use CRM_Custommosaico_Plugin_ColorLoader as ColorLoaderPlugin;
 /**
  * Collection of upgrade steps.
  */
-class CRM_Custommosaico_Upgrader extends CRM_Custommosaico_Upgrader_Base {
+class CRM_Custommosaico_Upgrader extends CRM_Extension_Upgrader_Base {
 
   public function install() {
     $this->createOptionGroup(FontLoaderPlugin::OPTION_GROUP, E::ts('Brand Fonts'));
