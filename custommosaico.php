@@ -37,12 +37,20 @@ function custommosaico_civicrm_enable() {
  * Implements hook_civicrm_mosaicoBaseTemplates().
  */
 function custommosaico_civicrm_mosaicoBaseTemplates(&$templates) {
+  // Existing mailings that already uses this template
+  $existingMailing = Civi\Api4\Mailing::get(FALSE)
+    ->addWhere('template_options', 'LIKE', '%versafix-compuco%')
+    ->setLimit(1)
+    ->execute();
+
   // Add custom mail template for mosaico.
   $templates['custommosaico'] = [
     'name' => 'versafix-compuco',
     'title' => 'Versafix Compuco',
     'path' => E::url('packages/compuco/templates/versafix-compuco/template-versafix-compuco.html'),
     'thumbnail' => E::url('packages/compuco/templates/versafix-compuco/edres/_full.png'),
+    'is_hidden' => (\Civi::settings()->get('custommosaico_hide_versafix_compuco_base_template') !== FALSE)
+    && $existingMailing->count() === 0,
   ];
 }
 
