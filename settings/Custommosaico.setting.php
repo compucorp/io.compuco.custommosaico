@@ -48,4 +48,17 @@ return [
     'description' => ts('If enabled, Mosaico editor will display the selected brand colours in the colour picker.'),
     'settings_pages' => ['mosaico' => ['weight' => 152]],
   ],
+  'custommosaico_hide_versafix_compuco_base_template' => [
+    'name' => 'custommosaico_hide_versafix_compuco_base_template',
+    'type' => 'Boolean',
+    'default' => TRUE,
+    'html_type' => 'checkbox',
+    'is_domain' => 1,
+    'title' => E::ts('Hide Versafix Compuco base template.'),
+    'description' => ts('If enabled, Mosaico editor will not display Versafix Compuco base template.'),
+    'settings_pages' => ['mosaico' => ['weight' => 153]],
+    'html_attributes' => [
+      'checked' => TRUE,
+    ],
+  ],
 ];
