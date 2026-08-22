@@ -9,4 +9,4 @@ The purpose of this extension is to allow us to customize certain behaviors in M
 
 
 # Technical Requirements
-* [Mosaico](https://github.com/veda-consulting-company/uk.co.vedaconsulting.mosaico): version = v2.7.
+* [Mosaico](https://github.com/veda-consulting-company/uk.co.vedaconsulting.mosaico): version = v2.9.
