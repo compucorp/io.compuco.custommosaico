@@ -80,16 +80,17 @@ function custommosaico_civicrm_mosaicoStyleUrlsAlter(&$styleUrls) {
  * Implements hook_civicrm_alterMailContent().
  */
 function custommosaico_civicrm_alterMailContent(&$content) {
-  // Replace [fontLoader.style] token with @font-face declaration.
-  if ($content['template_type'] === 'mosaico') {
+  // Replace [fontLoader.style] token with @font-face declaration,
+  // regardless of editor (mosaico or traditional).
+  $token = '[fontLoader.style]';
+
+  if (!empty($content['html']) && strpos($content['html'], $token) !== FALSE) {
     $css = FontLoaderPlugin::getPluginCSS();
+    $content['html'] = str_replace($token, $css, $content['html']);
+  }
 
-    if (!empty($content['text'])) {
-      $content['text'] = str_replace('[fontLoader.style]', $css, $content['text']);
-    }
-
-    if (!empty($content['html'])) {
-      $content['html'] = str_replace('[fontLoader.style]', $css, $content['html']);
-    }
+  // CSS has no meaning in plain text, so just remove the token there.
+  if (!empty($content['text']) && strpos($content['text'], $token) !== FALSE) {
+    $content['text'] = str_replace($token, '', $content['text']);
   }
 }
