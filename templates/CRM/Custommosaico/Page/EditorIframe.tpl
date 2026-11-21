@@ -4,15 +4,15 @@
 <head>
   <title>CiviCRM Mosaico</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <base href="{$baseUrl|htmlspecialchars}">
+  <base href="{$baseUrl|escape:'html'}">
 
   {foreach from=$scriptUrls item=scriptUrl}
-  <script type="text/javascript" src="{$scriptUrl|htmlspecialchars}">
+  <script type="text/javascript" src="{$scriptUrl|escape:'html'}">
   </script>
   {/foreach}
 
   {foreach from=$styleUrls item=styleUrl}
-  <link href="{$styleUrl|htmlspecialchars}" rel="stylesheet" type="text/css"/>
+  <link href="{$styleUrl|escape:'html'}" rel="stylesheet" type="text/css"/>
   {/foreach}
 
   {literal}
