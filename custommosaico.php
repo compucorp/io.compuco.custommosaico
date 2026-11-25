@@ -77,7 +77,7 @@ function custommosaico_civicrm_mosaicoConfig(&$config) {
   }
 
   $config['tinymceConfigFull']['external_plugins']['mailto'] = CRM_Core_Resources::singleton()
-    ->getUrl('mosaicoextras', 'js/tinymce-plugins/mailto/plugin.min.js', 1);
+    ->getUrl('mosaicoextras', 'js/tinymce-plugins/mailto/plugin.min.js', TRUE);
 }
 
 /**
