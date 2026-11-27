@@ -63,6 +63,33 @@ function custommosaico_civicrm_mosaicoPlugin(&$plugins) {
 }
 
 /**
+ * Implements hook_civicrm_mosaicoConfig().
+ *
+ * Mosaicoextras adds "mailto" to the plugin list of both TinyMCE configs but
+ * registers the plugin file on "tinymceConfig" only. Mosaico merges the two
+ * configs shallowly, so where "tinymceConfigFull" has its own
+ * "external_plugins" (Mosaico 3.6 and later) TinyMCE requests mailto from
+ * Mosaico's plugin folder, where it does not exist. The failed load stops
+ * every later text block from initialising.
+ *
+ * Mosaico 3.5 and earlier give "tinymceConfigFull" no "external_plugins", so
+ * the full editor inherits mailto and civicrmtoken from "tinymceConfig".
+ * Adding the key there would replace the inherited list and lose civicrmtoken.
+ */
+function custommosaico_civicrm_mosaicoConfig(&$config) {
+  if (!CRM_Extension_System::singleton()->getMapper()->isActiveModule('mosaicoextras')) {
+    return;
+  }
+
+  if (!isset($config['tinymceConfigFull']['external_plugins'])) {
+    return;
+  }
+
+  $config['tinymceConfigFull']['external_plugins']['mailto'] = CRM_Core_Resources::singleton()
+    ->getUrl('mosaicoextras', 'js/tinymce-plugins/mailto/plugin.min.js', TRUE);
+}
+
+/**
  * Implements hook_civicrm_mosaicoScritUrlsAlter().
  */
 function custommosaico_civicrm_mosaicoScriptUrlsAlter(&$scriptUrls) {
